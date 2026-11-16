@@ -68,7 +68,7 @@ First build the editor and UEFI player as described above. Then run:
 PowerShell -ExecutionPolicy Bypass -File .\Build-Setup.ps1
 ```
 
-The result is `Universal-BAS-Setup-x64.exe`, a borderless full-screen setup with a black BAS splash and smoothly moving outlined bar. The logo and bar fade away for prompts and return during installation. The setup installs the editor under Program Files and adds Start menu and optional desktop shortcuts. It reuses a recognizable Windows EFI System Partition mounted as Z:, otherwise asks Windows to mount its active EFI System Partition temporarily at Z: or another free drive letter. It copies the player to `EFI\BAS\BASX64.EFI` and does not replace Intel Unlock Manager or Windows Boot Manager. Animation setup defaults to skipped; choose a detected FAT32 volume to install the sample or add an animation later from the editor. Firmware boot order is unchanged; add BAS as a separate firmware entry.
+The result is `Universal-BAS-Setup-x64.exe`, a borderless full-screen setup with a black BAS splash and smoothly moving outlined bar. The logo and bar fade away for prompts and return during installation. The setup installs the editor under Program Files and adds Start menu and optional desktop shortcuts. It reuses a recognizable Windows EFI System Partition mounted as Z:, otherwise asks Windows to mount its active EFI System Partition temporarily at Z: or another free drive letter. It copies the player to `EFI\BAS\BASX64.EFI` Windows Boot Manager. Animation setup defaults to skipped; choose a detected FAT32 volume to install the sample or add an animation later from the editor. Firmware boot order is unchanged; add BAS as a separate firmware entry.
 
 ## Install and select BAS
 
@@ -83,7 +83,7 @@ The package starts with `BASANIM1`, a little-endian version, playback FPS, and f
 ## Safety and compatibility
 
 - The setup writes a new file under `EFI\BAS` and leaves firmware boot order unchanged.
-- Do not delete or rename other EFI files. Keep an existing unlock manager first in the firmware sequence.
+- Do not delete or rename other EFI files.
 - FAT32 is required because UEFI firmware commonly reads it directly. A FAT32 file cannot exceed 4 GiB.
 - The optional volume helper only uses already-unallocated space on an eligible non-system GPT disk; it does not shrink, delete, or format existing partitions.
 - Test the BAS choice manually before changing any default boot selection.
