@@ -72,7 +72,7 @@ The result is `Universal-BAS-Setup-x64.exe`, a borderless full-screen setup with
 
 ## Install and select BAS
 
-Run the installer as Administrator. It installs files, then gives you the manual firmware step. On a Dell system, press F2 during startup, open Boot Configuration, choose Add Boot Option, name it `Universal BAS`, and browse the EFI System Partition to `\EFI\BAS\BASX64.EFI`. Save without changing Intel Unlock Manager's existing order. Use F12 to manually choose Universal BAS for a test. Firmware menus vary by vendor and model; see `BOOT-SETUP.md`.
+Run the installer as Administrator. It installs files, then gives you the manual firmware step. On a Dell system, press F2 during startup, open Boot Configuration, choose Add Boot Option, name it `Universal BAS`, and browse the EFI System Partition to `\EFI\BAS\BASX64.EFI`. Use F12 to manually choose Universal BAS for a test. Firmware menus vary by vendor and model; see `BOOT-SETUP.md`.
 
 The editor writes exported animation data to `BAS\animation.bas` on a FAT32 volume. Keep that volume connected when starting BAS. The player searches UEFI-visible FAT filesystems for this package. If the package is missing or invalid, the player skips animation and continues to Windows Boot Manager.
 
