@@ -1,0 +1,11 @@
+[package]
+name = "universal-bas-uefi"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+uefi = { version = "0.41", features = ["alloc", "global_allocator", "panic_handler"] }
+zune-jpeg = { version = "0.5.15", default-features = false, features = ["x86"] }
+
+[profile.release.package.zune-jpeg]
+opt-level = 1
